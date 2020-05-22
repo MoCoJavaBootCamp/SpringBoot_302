@@ -5,11 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Job Form</h1>
-<div th:each="text : ${jobs}">
-    <p th:inline="text">[[${job.title}]]</p>
-    <p th:inline="text">[[${job.employer}]]</p>
-    <p th:text>${job.description}</p>
+<h1>Job Lists</h1>
+<a th:href="@{/add}">Add New Job</a>
+<div th:each="job : ${jobs}">
+    <p th:inline="text">Title: [[${job.title}]]</p>
+    <p th:inline="text">Employer: [[${job.employer}]]</p>
+    <p th:inline="text">Description: [[${job.description}]]</p>
 </div>
 </body>
 </html>
